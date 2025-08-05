@@ -18,6 +18,7 @@ final class StartScreenViewModel {
 
     func updateScreenState(newScreenState: StartScreenState) {
         currentScreenState = newScreenState
+        UserDefaults.standard.set(newScreenState.rawValue, forKey: "savedScreenState")
     }
 
     func loadScreenState() {
