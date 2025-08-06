@@ -25,7 +25,7 @@ private extension BooksApp {
         case .onboarding:
             OnboardingView(viewModel: OnboardingViewModel())
         case .list:
-            BookListView()
+            BookListView(viewModel: BookListViewModel())
         }
     }
 }
