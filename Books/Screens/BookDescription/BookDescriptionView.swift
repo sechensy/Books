@@ -49,5 +49,10 @@ extension BookDescriptionView {
         static let navigationTitle = "Описание книги"
         static let errorTitle = "Ошибка"
         static let errorButton = "ОК"
+        static let discript = "Описание"
+        static let notesTitle = "Заметки по книге"
+        static let quotesTitle = "Цитаты из книги"
+        static let addNote = "Добавить заметку"
+        static let addQuotes = "Добавить цитату"
     }
 }
