@@ -10,6 +10,7 @@ import Foundation
 protocol BookListProtocol {
     var books: [Book] { get set }
     var errorMessage: String? { get set }
+    var showAlert: Bool { get set }
 
     func setCoordinator(_ coordinator: Coordinator)
     func setStartScreenViewModel(_ startScreenViewModel: StartScreenViewModel)

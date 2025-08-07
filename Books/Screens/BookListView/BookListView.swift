@@ -42,13 +42,13 @@ struct BookListView: View {
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle(Constants.title)
         }
-        .alert(Constants.errorText, isPresented: .constant(viewModel.errorMessage != nil), actions: {
-            Button(Constants.errorButtonText) {
-                viewModel.showErrorMessage = nil
+        .alert(Constants.errorText, isPresented: $viewModel.showAlert) {
+            Button(Constants.errorButtonText, role: .cancel) {
+                viewModel.showAlert = false
             }
-        }, message: {
+        } message: {
             Text(viewModel.errorMessage ?? "")
-        })
+        }
         .tint(.black)
         .onAppear {
             viewModel.setCoordinator(coordinator)
