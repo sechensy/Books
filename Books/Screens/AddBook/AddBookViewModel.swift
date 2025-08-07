@@ -18,9 +18,13 @@ final class AddBookViewModel: AddBookProtocol {
     @ObservationIgnored
     private var coordinator: Coordinator?
     @ObservationIgnored
-    private let manager = DataBaseManager.shared
+    private let manager: DataBaseManager
     @ObservationIgnored
     weak var delegate: BookCreationDelegate?
+
+    init(manager: DataBaseManager = DataBaseManager.shared) {
+        self.manager = manager
+    }
 
     func setCoordinator(_ coordinator: Coordinator) {
         self.coordinator = coordinator

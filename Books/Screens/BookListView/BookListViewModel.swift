@@ -11,17 +11,19 @@ import Foundation
 final class BookListViewModel: BookListProtocol {
     var books: [Book] = []
     var errorMessage: String? = nil
-
-    init() {
-        fetchBooks()
-    }
+    var showAlert = false
 
     @ObservationIgnored
     private var coordinator: Coordinator?
     @ObservationIgnored
     private var startScreenViewModel: StartScreenViewModel?
     @ObservationIgnored
-    private let manager = DataBaseManager.shared
+    private let manager: DataBaseManager
+
+    init(manager: DataBaseManager = DataBaseManager.shared) {
+        self.manager = manager
+        fetchBooks()
+    }
 
     func setCoordinator(_ coordinator: Coordinator) {
         self.coordinator = coordinator

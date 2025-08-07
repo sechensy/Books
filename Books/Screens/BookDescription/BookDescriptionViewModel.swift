@@ -16,12 +16,13 @@ final class BookDescriptionViewModel: BookDescriptionProtocols {
     var showAlert = false
 
     @ObservationIgnored
-    var manager = DataBaseManager.shared
+    var manager: DataBaseManager
     @ObservationIgnored
     weak var deletionDelegate: BookDeletionDelegate?
 
-    init(book: Book) {
+    init(book: Book, manager: DataBaseManager = DataBaseManager.shared) {
         self.book = book
+        self.manager = manager
     }
 
     func addNote() {
