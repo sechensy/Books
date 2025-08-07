@@ -9,8 +9,19 @@ import Foundation
 import SwiftUI
 import Observation
 
+protocol CoordinatorProtocol {
+    var navPath: NavigationPath { get set }
+
+    /// Переход на конкретный экран
+    func addScreen(screen: BookListScreens)
+    /// Открыть предыдущий экран
+    func openPreviousScreen()
+    /// Сбросить навигацию в корень
+    func goToRoot()
+}
+
 @Observable
-final class Coordinator {
+final class Coordinator: CoordinatorProtocol {
     var navPath = NavigationPath()
 }
 
