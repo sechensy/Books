@@ -79,14 +79,3 @@ extension BookDescriptionView {
         .frame(width: 24, height: 24)
     }
 }
-
-private extension BookDescriptionView {
-    enum Constants {
-        static let buttonTitle = "Читать"
-        static let discript = "Описание"
-        static let notesTitle = "Заметки по книге"
-        static let quotesTitle = "Цитаты из книги"
-        static let addNote = "Добавить заметку"
-        static let addQuotes = "Добавить цитату"
-    }
-}
