@@ -11,7 +11,6 @@ import CoreData
 final class DataBaseManager {
     static let shared = DataBaseManager()
     private init() {}
-    private let storageManager = StorageManager()
 
     var books: [Book] = []
 
@@ -62,8 +61,6 @@ extension DataBaseManager {
 
         self.saveContext()
         try self.fetchBooks()
-
-        self.storageManager.saveCover(bookId: bookId, cover: cover)
     }
 
     /// `deleteBook` - метод для удаления книги
